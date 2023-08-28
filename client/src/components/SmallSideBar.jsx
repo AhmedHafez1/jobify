@@ -12,9 +12,7 @@ export default function SmallSideBar() {
     <Wrapper>
       <div
         className={
-          toggleShowSidebar
-            ? 'sidebar-container show-sidebar'
-            : 'sidebar-container'
+          showSidebar ? 'sidebar-container show-sidebar' : 'sidebar-container'
         }
       >
         <div className="content">
@@ -37,6 +35,7 @@ export default function SmallSideBar() {
                   key={text}
                   className={'nav-link'}
                   onClick={toggleShowSidebar}
+                  end
                 >
                   <span className="icon">{icon}</span>
                   {text}

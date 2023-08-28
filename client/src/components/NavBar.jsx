@@ -4,11 +4,15 @@ import useDashboardContext from '../hooks/useDashboardContext';
 import Logo from './Logo';
 
 export default function NavBar() {
-  const { toggleSidebar } = useDashboardContext();
+  const { toggleShowSidebar } = useDashboardContext();
   return (
     <Wrapper>
       <div className="nav-center">
-        <button type="button" className="toggle-btn" onClick={toggleSidebar}>
+        <button
+          type="button"
+          className="toggle-btn"
+          onClick={toggleShowSidebar}
+        >
           <FaAlignLeft />
         </button>
         <div>
