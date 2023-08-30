@@ -1,8 +1,9 @@
 import useDashboardContext from '../hooks/useDashboardContext';
 import { NavLink } from 'react-router-dom';
 import links from '../utils/links';
+import { PropTypes } from 'prop-types';
 
-export default function NavLinks() {
+export default function NavLinks({ BigSideBar }) {
   const { toggleShowSidebar } = useDashboardContext();
   return (
     <div className="nav-links">
@@ -13,7 +14,7 @@ export default function NavLinks() {
             to={path}
             key={text}
             className={'nav-link'}
-            onClick={toggleShowSidebar}
+            onClick={!BigSideBar && toggleShowSidebar}
             end
           >
             <span className="icon">{icon}</span>
@@ -24,3 +25,7 @@ export default function NavLinks() {
     </div>
   );
 }
+
+NavLinks.propTypes = {
+  BigSideBar: PropTypes.bool,
+};
